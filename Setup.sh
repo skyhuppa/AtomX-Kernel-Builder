@@ -21,7 +21,7 @@
 ############################## Setup Toolchains ############################
 
 	mkdir toolchains
-	gut https://github.com/mvaisakh/gcc-arm -b gcc-master toolchains/gcc-arm
+	gut https://github.com/mvaisakh/gcc-arm -b gcc-master toolchains/linaro-toolchain-latest
 	gut https://gitlab.com/dakkshesh07/neutron-clang toolchains/clang
 
 ############################################################################
