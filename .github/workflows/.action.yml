@@ -22,13 +22,6 @@ jobs:
         BOT_API_KEY: ${{ secrets.BOT_TOKEN }}
         CHAT_ID: ${{ secrets.CHAT_ID }} 
       run: |
-        chmod +x Setup.sh
         bash Setup.sh
-        chmod +x AtomX.sh
         bash AtomX.sh
-        chmod +x .telegram.sh
-        bash .telegram.sh
-        #chmod +x build.sh
-       #bash build.sh
-       #chmod +x upload.sh
-        #bash upload.sh
+
