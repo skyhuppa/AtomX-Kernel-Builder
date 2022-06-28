@@ -1,0 +1,34 @@
+name: Lisa Kernel
+
+on: 
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    container: 
+      image: jprimero15/archlinux-docker:latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Building lisa Kernel
+      env:
+        BOT_API_KEY: ${{ secrets.BOT_TOKEN }}
+        CHAT_ID: ${{ secrets.CHAT_ID }} 
+      run: |
+        chmod +x Setup.sh
+        bash Setup.sh
+        chmod +x AtomX.sh
+        bash AtomX.sh
+        #chmod +x print-vars.sh
+        #bash print-vars.sh
+        #chmod +x build.sh
+       #bash build.sh
+       #chmod +x upload.sh
+        #bash upload.sh
