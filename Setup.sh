@@ -4,7 +4,7 @@
 ###############################   MISC   ###################################
 
 	gut() {
-		git clone --depth=1  $@
+		git clone --depth=1 -q $@
 	}
 
 ############################################################################
@@ -12,7 +12,7 @@
 ######################## Setup Telegram API ################################
 
 	#pip -q install telegram-send
-	gut https://github.com/rahiel/telegram-send -b master telegram-send
+	gut https://github.com/rahiel/telegram-send -b master -q telegram-send
 	sed -i s/demo1/${BOT_API_KEY}/g telegram-send.conf
 	sed -i s/demo2/${CHAT_ID}/g telegram-send.conf
 	mkdir $HOME/.config
