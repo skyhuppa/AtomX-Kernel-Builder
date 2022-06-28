@@ -22,20 +22,20 @@
 ############################## Setup Toolchains ############################
 
 	mkdir toolchains
-	gut https://github.com/mvaisakh/gcc-arm -b gcc-master toolchains/gcc-arm
-	gut https://gitlab.com/dakkshesh07/neutron-clang toolchains/clang
+	git clone https://github.com/mvaisakh/gcc-arm -b gcc-master toolchains/gcc-arm
+	git clone https://gitlab.com/dakkshesh07/neutron-clang toolchains/clang
 
 ############################################################################
 
 ############################## Setup AnyKernel #############################
 
-	gut https://github.com/Atom-X-Devs/AnyKernel3 -b main AnyKernel3
+	git clone https://github.com/Atom-X-Devs/AnyKernel3 -b main AnyKernel3
 
 ############################################################################
 
 ############################## Setup Kernel ################################
 
-	gut https://github.com/skyhuppa/android_kernel_xiaomi_sm7325 -b kernel.lnx.5.4.r1-rel Kernel
+	git clone https://github.com/skyhuppa/android_kernel_xiaomi_sm7325 -b kernel.lnx.5.4.r1-rel Kernel
 
 ############################################################################
 
