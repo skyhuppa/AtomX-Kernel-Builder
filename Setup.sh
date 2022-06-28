@@ -1,21 +1,21 @@
 #bin/#!/bin/bash
 
+
 ###############################   MISC   ###################################
 
-	#gut() {
-	#	git clone --depth=1 -q $@
-	#}
+	gut() {
+		git clone --depth=1 -q $@
+	}
 
 ############################################################################
 
 ######################## Setup Telegram API ################################
 
-	git clone https://github.com/fabianonline/telegram.sh $HOME/telegram.sh
-	mv .telegram.sh $HOME/.telegram.sh
-	sed -i s/demo1/${BOT_API_KEY}/g $HOME/.telegram.sh
-	sed -i s/demo2/${CHAT_ID}/g $HOME/.telegram.sh
-	#mkdir $HOME/.config
-	#mv telegram-send.conf $HOME/.config/telegram-send.conf
+	pip -q install telegram-send
+	sed -i s/demo1/${BOT_API_KEY}/g telegram-send.conf
+	sed -i s/demo2/${CHAT_ID}/g telegram-send.conf
+	mkdir $HOME/.config
+	mv telegram-send.conf $HOME/.config/telegram-send.conf
 
 ############################################################################
 
