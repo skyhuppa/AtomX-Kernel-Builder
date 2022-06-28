@@ -35,17 +35,17 @@ DTB_PATH="$KERNEL_DIR/work/arch/arm64/boot/dts/vendor/qcom"
 
 # functions
 error() {
-	.telegram.sh "Error⚠️: $HOME/.telegram.sh
+	telegram-send "Error⚠️: $@"
 	exit 1
 }
 
 success() {
-	.telegram.sh "Success: $HOME/.telegram.sh
+	telegram-send "Success: $@"
 	exit 0
 }
 
 inform() {
-	.telegram.sh --format html $HOME/.telegram.sh
+	telegram-send --format html "$@"
 }
 
 muke() {
@@ -53,7 +53,7 @@ muke() {
 		KERN_MAKE_ARGS="-s $KERN_MAKE_ARGS"
 	fi
 
-	make $HOME/.telegram.sh $KERN_MAKE_ARGS
+	make $@ $KERN_MAKE_ARGS
 }
 
 usage() {
@@ -205,14 +205,12 @@ zipper() {
 		Codename: <code>$CODENAME</code>
 		Build Date: <code>$(date +"%Y-%m-%d %H:%M")</code>
 		Build Type: <code>$BUILD_TYPE</code>
-
 		-----------last commit details-----------
 		Last commit (name): <code>$LAST_COMMIT</code>
-
 		Last commit (hash): <code>$LAST_HASH</code>
 	"
 
-	.telegram.sh --file *-signed.zip
+	telegram-send --file *-signed.zip
 
 	make clean
 
@@ -228,7 +226,7 @@ if [[ -z $* ]]; then
 	usage
 fi
 
-for arg in "$HOME/.telegram.sh"; do
+for arg in "$@"; do
 	case "${arg}" in
 		"--compiler="*)
 			COMPILER=${arg#*=}
