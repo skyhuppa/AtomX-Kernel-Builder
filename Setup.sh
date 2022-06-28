@@ -23,7 +23,7 @@
 
 	mkdir toolchains
 	git clone https://github.com/mvaisakh/gcc-arm -b gcc-master toolchains/gcc-arm
-	git clone https://gitlab.com/dakkshesh07/neutron-clang toolchains/clang
+	git clone https://github.com/kdrag0n/proton-clang -b master toolchains/clang
 
 ############################################################################
 
