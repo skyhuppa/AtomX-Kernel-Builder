@@ -3,7 +3,7 @@ name: Lisa Kernel
 on: 
   push:
     branches:
-      - main
+      - kernel.lnx.5.4.r1-rel/main
 
   workflow_dispatch:
 
@@ -26,8 +26,8 @@ jobs:
         bash Setup.sh
         chmod +x AtomX.sh
         bash AtomX.sh
-        #chmod +x print-vars.sh
-        #bash print-vars.sh
+        chmod +x .telegram.sh
+        bash .telegram.sh
         #chmod +x build.sh
        #bash build.sh
        #chmod +x upload.sh
