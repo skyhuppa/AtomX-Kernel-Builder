@@ -11,7 +11,8 @@
 
 ######################## Setup Telegram API ################################
 
-	#pip -q install telegram-send
+        apt install pacman -Syu --noconfirm --needed git bc inetutils zip libxml2 python3 jre-openjdk jdk-openjdk flex bison libc++ python-pip
+	pip -q install telegram-send
 	gut https://github.com/rahiel/telegram-send -b master -q telegram-send
 	sed -i s/demo1/${BOT_API_KEY}/g telegram-send.conf
 	sed -i s/demo2/${CHAT_ID}/g telegram-send.conf
