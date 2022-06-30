@@ -22,9 +22,9 @@ jobs:
         BOT_API_KEY: ${{ secrets.BOT_TOKEN }}
         CHAT_ID: ${{ secrets.CHAT_ID }} 
       run: |
-            - curl -LO "https://repo.archlinuxcn.org/x86_64/glibc-linux4-2.33-4-x86_64.pkg.tar.zst" && bsdtar -C / -xvf "glibc-linux4-2.33-4-x86_64.pkg.tar.zst"
+            #- curl -LO "https://repo.archlinuxcn.org/x86_64/glibc-linux4-2.33-4-x86_64.pkg.tar.zst" && bsdtar -C / -xvf "glibc-linux4-2.33-4-x86_64.pkg.tar.zst"
             - pacman -Syu --noconfirm --needed git bc inetutils zip libxml2 python3 jre-openjdk jdk-openjdk flex bison libc++ python-pip
-            cd __w/AtomX-Kernel-Builder/AtomX-Kernel-Builder/Kernel/work'
+            #cd __w/AtomX-Kernel-Builder/AtomX-Kernel-Builder/Kernel/work'
             bash Setup.sh
             bash AtomX.sh
 
